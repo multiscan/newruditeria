@@ -1,0 +1,56 @@
+.row
+  .col-md-3.thumbnail
+    %img{src: @user.avatar? ? @user.avatar.url(:large) : image_path(@user.default_avatar),  alt: "Image of #{@user.name}", class: "img-rounded"}
+  .col-md-9
+    %h1= @user.name
+    %p= @user.email || "Missing email"
+    %p
+      %a{href: edit_user_path(@user), class: "btn btn-info btn-sm", role: "button"} Edit profile
+
+%h2 Current Purchase
+%table{class: 'table', id: 'cart'}
+  %thead
+    %tr
+      %th{colspan: 2} Product
+      %th Unit Price
+      %th Quantity
+      %th Total
+  %tbody
+    - @products.each do |p|
+      %tr
+        %td
+          %a{href: '#', class: "btn"}
+            =image_tag(image_url("product/#{p.image_file_name}"), alt: "Image of #{p.name}", class: "img-rounded")
+        %td
+          = p.name
+        %td
+          = 2.5
+        %td
+          %a{href: '#', class: "btn btn-lg btn-danger"}
+            %span{class: 'glyphicon glyphicon-minus-sign', 'aria-hidden' => true}
+          %span.quantity 2
+          %a{href:'#', class: "btn btn-lg btn-success"}
+            %span{class: 'glyphicon glyphicon-plus-sign', 'aria-hidden' => true}
+        %td
+          = 5.0
+  %thead
+    %tr
+      %th{colspan: 4, class: "text-right"}
+        Grand Total
+      %th
+        5.0
+
+
+-#.row
+  .col-md-6
+    %h2 Current Purchase
+    #cart
+  .col-md-6
+    %h2 Available Items
+    .row
+      - @products.each do |p|
+        .col-sm-4.col-xs-6
+          %a{href: , class: "btn btn-primary thumbnail thumbnail-product"}
+            =image_tag(image_url("product/#{p.image_file_name}"), alt: "Image of #{p.name}", class: "img-rounded")
+            .caption
+              %p.text-center= p.name

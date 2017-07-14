@@ -1,0 +1,8 @@
+.row
+  - @users.each do |u|
+    .col-xs-3.col-md-2
+      %a{href: user_path(u), class: "thumbnail thumbnail-user"}
+        %img{src: u.avatar? ? u.avatar.url(:small) : image_path(u.default_avatar),  alt: "Image of #{u.name}", class: "img-rounded"}
+        .caption
+          %p.text-center= u.name
+#screensaver

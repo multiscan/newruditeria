@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  picture_path: MyString
+  visible: false
+  stock: 1
+  comment: MyText
+
+two:
+  name: MyString
+  picture_path: MyString
+  visible: false
+  stock: 1
+  comment: MyText

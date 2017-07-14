@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: 
+  amount: 1
+  valid_from: 2016-07-06 17:28:33
+
+two:
+  product: 
+  amount: 1
+  valid_from: 2016-07-06 17:28:33
